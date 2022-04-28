@@ -1,0 +1,92 @@
+
+.app{
+    min-height: 100vh;
+    background-color: #040D1F;
+    z-index:-1;
+}
+
+.landing_nav {
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.landing_nav_logo {
+    font-size: 2.4rem;
+}
+
+
+
+#sanity_logo {
+    width: 200px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#FFF;
+    height: 60rem;
+}
+
+
+.hero_title_section {
+    margin-top: -10rem;
+    text-align: center;
+    width: 80rem;
+}
+
+
+#hero_heading {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    /* text-transform: uppercase; */
+}
+
+#hero_subheading{
+    font-size: 2rem;
+}
+
+.notification_form{
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.notification_form_header {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.input_title {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+}
+
+.form-row {
+    display:flex;
+    justify-content: center;
+}
+
+#email_input {
+    width:40rem;
+    height: 4rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin-right: 1rem;
+}
+
+#submit_btn {
+    background-color: #3498DB;
+    padding: 1rem 4rem;
+    color: #fff;
+    border-radius: .5rem;
+}
+/* .color_circle {
+    z-index: 5;
+    width: 800px;
+    height: 200px;
+    background-image: 
+    filter: blur(20px);
+    border-radius: 20rem;
+} */
