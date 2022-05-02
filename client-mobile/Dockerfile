@@ -1,15 +1,8 @@
+#https://sonyarouje.com/2019/08/02/expo-react-native-development-in-docker/
 
-FROM ubuntu:16.04
+FROM node:10.16-buster-slim
+WORKDIR app
 
-RUN apt-get update && \
-  apt-get install -y  curl && \
-  curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
-  apt-get install -y nodejs
-
-COPY ./ /home/
-WORKDIR /home
-
-RUN npm install && npm install -g expo-cli
-CMD [ "npm", "start" ]
-
-
+COPY ./package.json .
+RUN npm install
+COPY .
