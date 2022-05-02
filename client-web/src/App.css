@@ -43,9 +43,10 @@
     /* text-transform: uppercase; */
 }
 
-#hero_subheading{
+#hero_subheading {
     font-size: 2rem;
 }
+
 
 .notification_form{
     margin-top: 4rem;
@@ -82,6 +83,17 @@
     color: #fff;
     border-radius: .5rem;
 }
+
+.toast_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     background-color: #2ecc71;
+     padding: 2rem;
+     color:#FFF;
+}
+
 /* .color_circle {
     z-index: 5;
     width: 800px;

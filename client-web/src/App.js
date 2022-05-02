@@ -1,35 +1,50 @@
 import "./App.css";
 import SanityLogo from "./components/svg/SanityLogo";
 import HealthIcon from "./components/svg/HealthIcon";
-import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore"
-import {db} from "./firebase/firebase"
-
+import Toast from 'react-bootstrap/Toast'
+import ToastBody from "react-bootstrap/ToastBody";
+import { useState, useEffect } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "./firebase/firebase";
 
 function App() {
 
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(true);
+  const [message, setMessage] = useState('');
+  const [show, setShow] = useState(false);
+  const toggleToast = () => setShow(!show);
 
-const [loading, setLoading] = useState(false);
-const [email, setEmail] = useState('');
-
+  //when the user clicks the submit button the subscribe to email notification function
+  // gets triggered and adds a toast to the top of the page
 
   const subscribeToEmailNotification = async (e) => {
     try {
       e.preventDefault();
-      const docRef = await addDoc(collection(db, "contact"), {
-        email:email,
+       const docRef = await addDoc(collection(db, "contact"), {
+         email:email,
       });
-      alert("Your email was successfully saved");
-
-    } catch(error) {
-      console.log(error);
+      
+      setEmail("");
+      toggleToast();
+    } catch (e) {
+      setError(!error)
+      console.log(e);
     }
-  }
+  };
 
 
   return (
     <>
       <div className="app">
+      <Toast  bg='success' onClose={() => setShow(false)} show={show} delay={3000}
+        autohide>
+          <ToastBody>
+            <div className="toast_wrapper">
+              <h1 className="toast_heading">Success! You will receive an email notification as soon as the beta application has been released.</h1>
+            </div>
+          </ToastBody>
+        </Toast>
         <header className="landing_nav">
           <div className="landing_nav_header">
             <SanityLogo logoStyle="isolatedwhiteMonoChrome" />
@@ -44,7 +59,7 @@ const [email, setEmail] = useState('');
             <h1 id="hero_subheading">
               Our mobile application will provide covid-19 tracking solutions at
               the microlevel for people, and businesses. Join us in spearheading
-              a movement that will make the World A Better Place For Everyone.
+              a movement that will make the world a better place for everyone.
             </h1>
           </div>
 
@@ -56,8 +71,13 @@ const [email, setEmail] = useState('');
 
             <form onSubmit={subscribeToEmailNotification}>
               <div className="form-row">
-                <input id="email_input" onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>    
-                <input id="submit_btn" type="submit"/>
+                <input
+                  id="email_input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                />
+                <input id="submit_btn" type="submit" />
               </div>
             </form>
           </div>
