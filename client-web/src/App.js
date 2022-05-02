@@ -11,7 +11,6 @@ function App() {
 
   const [email, setEmail] = useState("");
   const [error, setError] = useState(true);
-  const [message, setMessage] = useState('');
   const [show, setShow] = useState(false);
   const toggleToast = () => setShow(!show);
 
