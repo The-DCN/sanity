@@ -16,4 +16,6 @@ We are currently working on the alpha-release of the Sanity Mobile App. The init
 
 # <p align="center"> <img src="https://github.com/Lin8x/sanity/blob/main/github-images/favicon.png" alt="logo" width="40" height="40"> &nbsp; Images &nbsp; <img src="https://github.com/Lin8x/sanity/blob/main/github-images/favicon.png" alt="logo" width="40" height="40"> </p>
 
+There are no images available at this time.
+
 &nbsp;
